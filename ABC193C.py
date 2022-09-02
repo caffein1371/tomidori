@@ -4,12 +4,17 @@ import sys
 
 _INPUT = """\
 100000
-
 """
 sys.stdin = io.StringIO(_INPUT)
 ##########################################
-import math
+
 N=int(input())
-print (math.log2(N))
-print (2**16)
-print (2**17)
+temp = set()
+for a in range(2,(10**5+10)):
+    for b in range(2,100):
+        if a**b<=N:
+            temp.add(a**b)
+        else:
+            break
+
+print (N-len(temp))
