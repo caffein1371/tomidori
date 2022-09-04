@@ -19,4 +19,4 @@ if X-K*D>0:
 if (K-(X//D))%2==0:
     print (X-D*(X//D))
 else:
-    print (abs(X-D*K))
+    print (abs(X-D*(X//D+1)))
