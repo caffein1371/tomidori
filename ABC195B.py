@@ -11,25 +11,15 @@ sys.stdin = io.StringIO(_INPUT)
 A,B,W = map(int,input().split())
 
 W=W*1000
-#個数の最大値を求める
-maxtemp = W//A
-mintemp = W//B
-if W%A==0 and W%B==0:
-    print (str(mintemp)+" "+str(maxtemp))
-    quit()
+mintemp = 10**15
+maxtemp = -10**15
 
-#個数の最小値を求める
-minans = float(INF)
-maxans = float(-INF)
+for i in range(1,10**6+10):
+    if A*i<=W<=B*i:
+        mintemp = min(mintemp,i)
+        maxtemp = max(maxtemp,i)
 
-for i in range(A,B+1,5):
-    
-
-
-print (maxtemp)
-print (mintemp)
-# for i in range():
-#     if W%i=0 and W-(W//i)==0:
-
-
-
+if mintemp == 10**15:
+    print ("UNSATISFIABLE")
+else:
+    print (mintemp,maxtemp)
