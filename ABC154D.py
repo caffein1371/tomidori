@@ -12,19 +12,17 @@ sys.stdin = io.StringIO(_INPUT)
 N,K=map(int,input().split())
 plist = list(map(int,input().split()))
 
-a = [0]
+e = [0]*N
 #期待値は1を初項，1/2を差とする等差数列
-for i in range(1,1001):
-    temp = 1+(i-1)*(1/2)
-    a.append(temp)
-#print (a[1])
+for i in range(N):
+    e[i] = (plist[i]+1)/2
+#print (e[0])
 
 tempsum = 0
-#print (plist[0:K])
 for i in range(0,K):
-    tempsum+= a[plist[i]]
-ans = -10**15
-for i in range(K-1,N-1):
-    tempsum = tempsum+a[plist[i+1]]-a[plist[i+1-K]]
+    tempsum+= e[i]
+ans = tempsum
+for i in range(K,N):
+    tempsum = tempsum+e[i]-e[i-K]
     ans = max(tempsum,ans)
 print (ans)
