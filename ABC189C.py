@@ -9,15 +9,20 @@ _INPUT = """\
 """
 sys.stdin = io.StringIO(_INPUT)
 ##########################################
-import numpy as np
 N = int(input())
 Alist = list(map(int,input().split()))
 
 l,r,x = 0,0,0
+#Alist.append(1)
+num = sorted(list(set(Alist)))
 
-num = sorted(list(set(Alist)),reverse=True)
-
-temp = -10**15
-nlist = np.array(Alist)
-print (nlist)
-#for i in range(len(num)):
+maxsum = -10*15
+for i in range(len(num)):
+  temp=0
+  for j in range(len(Alist)):
+    if num[i]<=Alist[j]:
+      temp+=num[i]
+      maxsum=max(temp,maxsum)
+    else:
+      temp=0
+print (maxsum)
