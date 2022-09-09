@@ -1,6 +1,11 @@
-import math
-def lcm(A,B):
-  return (A*B)//math.gcd(A,B)
+##########################################
+import io
+import sys
 
-A,B = map(int,input().split())
-print (lcm(A,B))
+_INPUT = """\
+2
+1 2 3
+aaa
+"""
+sys.stdin = io.StringIO(_INPUT)
+##########################################
