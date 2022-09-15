@@ -14,7 +14,7 @@ gyoretsu = []
 for i in range(H):
     temp = list(input())
     gyoretsu.append(temp)
-print (gyoretsu)
+#print (gyoretsu)
 ans = 0
 for gyored in range(1<<H):
     for retsured in range(1<<W):
