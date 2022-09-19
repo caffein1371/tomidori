@@ -17,7 +17,9 @@ while i*i<=2*N:
     if 2*N%i==0:
         x=i
         y = 2*N//x
-        if y%2!=x%2:
+        if y%2!=0 and x%2!=1:
+            ans+=1
+        elif y%2!=1 and x%2!=0:
             ans+=1
     i+=1
 
