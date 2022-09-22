@@ -10,13 +10,24 @@ sys.stdin = io.StringIO(_INPUT)
 ##########################################
 A,B,X = map(int,input().split())
 
-ans = -10**15
+def price(N):
+    return A*N+B*len(str(N))
 
-i = 0
-while A*i+B*(i//10+1)<=X:
-    ans = max(ans,A*i+B*(i//10+1))
-    i+=1
-if i ==0:
+left = 1
+right = 10**20
+middle = 1
+if X<price(middle):
     print (0)
-else:
-    print (i-1)
+    quit()
+
+while 1<right-left:
+    middle = (left+right)//2
+    if X<price(middle):
+        right = middle
+    else:
+        left = middle
+if 10**9<left:
+    print (10**9) 
+    quit()
+
+print (left)
