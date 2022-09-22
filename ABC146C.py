@@ -11,23 +11,23 @@ sys.stdin = io.StringIO(_INPUT)
 A,B,X = map(int,input().split())
 
 def price(N):
-    return A*N+B*len(str(N))
+    return X<A*N+B*len(str(N))
 
-left = 1
-right = 10**20
+ok = 1
+ng = 10**20
 middle = 1
-if X<price(middle):
+if price(middle):
     print (0)
     quit()
 
-while 1<right-left:
-    middle = (left+right)//2
-    if X<price(middle):
-        right = middle
+while 1<ng-ok:
+    middle = (ok+ng)//2
+    if price(middle):
+        ng = middle
     else:
-        left = middle
-if 10**9<left:
+        ok = middle
+if 10**9<ok:
     print (10**9) 
     quit()
 
-print (left)
+print (ok)
