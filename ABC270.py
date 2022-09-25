@@ -42,3 +42,7 @@ elif X>0 and 0>Z>Y:
     print (X)
 elif 0>X and 0<Z<Y:
     print (abs(X)) 
+elif Z>X>0 and 0>Y:
+    print (X)
+elif 0>X>Z and 0<Y:
+    print (abs(X))
