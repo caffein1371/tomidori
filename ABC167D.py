@@ -12,8 +12,3 @@ sys.stdin = io.StringIO(_INPUT)
 N,K = map(int,input().split())
 Alist =list(map(int,input().split()))
 
-i=0
-for _ in range(K-1):
-    temp = Alist[i]-1
-    i = temp
-print (Alist[temp])
