@@ -12,3 +12,4 @@ sys.stdin = io.StringIO(_INPUT)
 N,K = map(int,input().split())
 Alist =list(map(int,input().split()))
 
+#１回+残りの回数%ループのノードの個数
